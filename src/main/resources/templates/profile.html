@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<style>
+
+    body {
+        background: rgb(212, 180, 180);
+        max-width: 900px;
+        margin:  0 auto;
+        padding: 10px;
+        text-align: center;
+        justify-content: space-around;
+    }
+
+    .bubbles {
+        position: relative;
+        display: flex;
+    }
+
+    .bubbles span {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        background: #fddef9;
+        margin: 0 3px;
+        border-radius: 50%;
+        box-shadow: 0 0 50px #000000, 0 0 50px #000000;
+        animation: animate 15s linear infinite;
+        animation-duration: calc(150s / var(--i));
+
+    }
+
+    .bubbles span:nth-child(even) {
+        background: #ffffff;
+        box-shadow: 0 0 50px #000000, 0 0 100px #000000;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translateY(10vh) scale(0);
+        }
+        100% {
+            transform: translateY(-10vh) scale(1);
+        }
+    }
+    .center h1{
+        color: rgb(0, 0, 0);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        width: 900px;
+        text-align: center;
+    }
+</style>
+
+<body>
+<div class="container">
+    <div class=" bubbles">
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:10"></span>
+        <span style="--i:14"></span>
+        <span style="--i:23"></span>
+        <span style="--i:18"></span>
+        <span style="--i:16"></span>
+        <span style="--i:19"></span>
+        <span style="--i:20"></span>
+        <span style="--i:22"></span>
+        <span style="--i:25"></span>
+        <span style="--i:18"></span>
+        <span style="--i:21"></span>
+        <span style="--i:15"></span>
+        <span style="--i:13"></span>
+        <span style="--i:26"></span>
+        <span style="--i:17"></span>
+        <span style="--i:13"></span>
+        <span style="--i:28"></span>
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:10"></span>
+        <span style="--i:14"></span>
+        <span style="--i:23"></span>
+        <span style="--i:18"></span>
+        <span style="--i:16"></span>
+        <span style="--i:19"></span>
+        <span style="--i:20"></span>
+        <span style="--i:22"></span>
+        <span style="--i:25"></span>
+        <span style="--i:18"></span>
+        <span style="--i:21"></span>
+        <span style="--i:15"></span>
+        <span style="--i:13"></span>
+        <span style="--i:26"></span>
+        <span style="--i:17"></span>
+        <span style="--i:13"></span>
+        <span style="--i:28"></span>
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:10"></span>
+        <span style="--i:14"></span>
+        <span style="--i:23"></span>
+        <span style="--i:18"></span>
+        <span style="--i:16"></span>
+        <span style="--i:19"></span>
+        <span style="--i:20"></span>
+        <span style="--i:22"></span>
+        <span style="--i:25"></span>
+        <span style="--i:18"></span>
+        <span style="--i:21"></span>
+        <span style="--i:15"></span>
+        <span style="--i:13"></span>
+        <span style="--i:26"></span>
+        <span style="--i:17"></span>
+        <span style="--i:13"></span>
+        <span style="--i:28"></span>
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:10"></span>
+        <span style="--i:14"></span>
+        <span style="--i:23"></span>
+        <span style="--i:18"></span>
+        <span style="--i:16"></span>
+        <span style="--i:19"></span>
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:10"></span>
+        <span style="--i:14"></span>
+        <span style="--i:23"></span>
+        <span style="--i:18"></span>
+        <span style="--i:16"></span>
+        <span style="--i:19"></span>
+
+    </div>
+</div>
+
+<script>
+    function updateTextInput(val) {
+        document.getElementById('ageValue').innerHTML=val;
+    }
+</script>
+
+<h1>Profile</h1>
+<form action="#" th:action="@{/persons}" th:object="${person}" method="POST">
+
+    <td>Lastname: <input type="text" th:field="*{lastname}" placeholder="Yakovenko" id="lastname"
+                         pattern="^([a-zA-Z]){2,1024}$" required/></td>
+    <p></p>
+
+
+    <p>Name: <input type="text" th:field="*{name}" id="name" placeholder="Catherine" pattern="^([a-zA-Z]){2,1024}$"
+                    required/></p>
+    <p></p>
+
+
+    <p>Patronymic: <input type="text" th:field="*{patronymic}" id="patronymic" placeholder="Alex"
+                          pattern="^([a-zA-Z]){2,1024}$" required/></p>
+    <p></p>
+
+
+    <p>Age: <input type="range" th:field="*{age}" id="age" placeholder="19" min="10" max="127" required
+                   onchange="updateTextInput(this.value);"/></p>
+    <p id="ageValue">0</p>
+    <p></p>
+
+    <p>Salary: <input type="number" th:field="*{salary}" placeholder="Salary" min="0" max="100000000" required="true"/>
+    </p>
+
+
+    <p>Email: <input type="text" th:field="*{email}" id="email" placeholder="yakovgreat@gmail.com"
+                     pattern="^(.+)@(.+)$" title="example@mail.com" required/></p>
+    <p></p>
+
+
+    <p>Work: <input type="text" th:field="*{work}" id="work" placeholder="I Love Netcracker!"
+                    pattern="^[a-zA-Z\d./']{0,2048}$"
+                    required/></p>
+    <p></p>
+
+
+    <p ><a href="/upload">Upload file</a></p>
+
+
+    <p class ="button"><input type="submit" value="Add person"/> <input type="reset" value="Reset"/></p>
+
+    <p><a href="/search">Find person</a></p>
+</form>
+
+
+</body>
+</html>

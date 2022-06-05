@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>People</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+
+
+    body {
+        background: rgb(212, 180, 180);
+    }
+
+    .bubbles {
+        position: relative;
+        display: flex;
+    }
+
+    .bubbles span {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        background: #fddef9;
+        margin: 0 3px;
+        border-radius: 50%;
+        box-shadow: 0 0 50px #000000, 0 0 50px #000000;
+        animation: animate 15s linear infinite;
+        animation-duration: calc(150s / var(--i));
+
+    }
+
+    .bubbles span:nth-child(even) {
+        background: #ffffff;
+        box-shadow: 0 0 50px #000000, 0 0 100px #000000;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translateY(10vh) scale(0);
+        }
+        100% {
+            transform: translateY(-10vh) scale(1);
+        }
+    }
+    .wrapper .center{
+        position: absolute;
+        left: 50%;
+        top: 55%;
+        transform: translate(-50%, -50%);
+        font-family: sans-serif;
+        user-select: none;
+    }
+    .center h1{
+        color: rgb(0, 0, 0);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 40px;
+        width: 900px;
+        text-align: center;
+    }
+    p{
+        margin: 70px 370px;
+    }
+    .buttons p{
+        height: 50px;
+        width: 150px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #ffffff;
+        background:  #dbdbdb;
+        border-radius: 15px;
+        transition: .5s;
+        text-align: center;
+    }
+
+    .buttons p:hover{
+        background:rgb(255, 218, 218);;
+    }
+
+</style>
+
+<body>
+<div class="container">
+    <div class=" bubbles">
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:10"></span>
+        <span style="--i:14"></span>
+        <span style="--i:23"></span>
+        <span style="--i:18"></span>
+        <span style="--i:16"></span>
+        <span style="--i:19"></span>
+        <span style="--i:20"></span>
+        <span style="--i:22"></span>
+        <span style="--i:25"></span>
+        <span style="--i:18"></span>
+        <span style="--i:21"></span>
+        <span style="--i:15"></span>
+        <span style="--i:13"></span>
+        <span style="--i:26"></span>
+        <span style="--i:17"></span>
+        <span style="--i:13"></span>
+        <span style="--i:28"></span>
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:10"></span>
+        <span style="--i:14"></span>
+        <span style="--i:23"></span>
+        <span style="--i:18"></span>
+        <span style="--i:16"></span>
+        <span style="--i:19"></span>
+        <span style="--i:20"></span>
+        <span style="--i:22"></span>
+        <span style="--i:25"></span>
+        <span style="--i:18"></span>
+        <span style="--i:21"></span>
+        <span style="--i:15"></span>
+        <span style="--i:13"></span>
+        <span style="--i:26"></span>
+        <span style="--i:17"></span>
+        <span style="--i:13"></span>
+        <span style="--i:28"></span>
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:10"></span>
+        <span style="--i:14"></span>
+        <span style="--i:23"></span>
+        <span style="--i:18"></span>
+        <span style="--i:16"></span>
+        <span style="--i:19"></span>
+        <span style="--i:20"></span>
+        <span style="--i:22"></span>
+        <span style="--i:25"></span>
+        <span style="--i:18"></span>
+        <span style="--i:21"></span>
+        <span style="--i:15"></span>
+        <span style="--i:13"></span>
+        <span style="--i:26"></span>
+        <span style="--i:17"></span>
+        <span style="--i:13"></span>
+        <span style="--i:28"></span>
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:10"></span>
+        <span style="--i:14"></span>
+        <span style="--i:23"></span>
+        <span style="--i:18"></span>
+        <span style="--i:16"></span>
+        <span style="--i:19"></span>
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:24"></span>
+        <span style="--i:10"></span>
+        <span style="--i:14"></span>
+        <span style="--i:23"></span>
+        <span style="--i:18"></span>
+        <span style="--i:16"></span>
+        <span style="--i:19"></span>
+
+    </div>
+</div>
+<div class="wrapper">
+    <div class="center">
+        <h1>Welcome to my homework №5</h1>
+        <br>
+        <div class="buttons">
+        <p><a href="/profile"> Add a new person</a></p>
+        <p><a href="/search">Find a person</a></p>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+</html>
